@@ -1,3 +1,36 @@
-baseURL = 'http://example.org/'
+baseURL = 'https://discover02.github.io'
 languageCode = 'en-us'
-title = 'My New Hugo Site'
+title = "Discover02's Blog"
+theme = "hugo-coder"
+
+[author]
+  name = "Taha"
+  email = "mtaha1905@yandex.com"
+
+[markup.goldmark.renderer]
+  unsafe = true
+
+[params]
+  author = "Taha"
+  info = "Software Enthusiast"
+  description = "Taha's personal website"
+  keywords = "blog"
+  colorScheme = "dark"
+
+[[params.social]]
+  name = "Github"
+  icon = "fa fa-github fa-2x"
+  weight = 1
+  url = "https://github.com/discover02"
+[[params.social]]
+  name = "RSS"
+  icon = "fa fa-2x fa-rss"
+  weight = 6
+  url = "index.xml"
+  rel = "alternate"
+  type = "application/rss+xml"
+
+[[menu.main]]
+  name = "Blog"
+  weight = 1
+  url = "content/"
