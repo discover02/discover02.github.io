@@ -33,4 +33,4 @@ theme = "hugo-coder"
 [[menu.main]]
   name = "Blog"
   weight = 1
-  url = "content/"
+  url = "posts/"
