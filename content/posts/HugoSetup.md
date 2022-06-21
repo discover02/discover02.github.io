@@ -57,7 +57,7 @@ $ cd kullanıcıadı.github.io
 
 - Hugo'yu yapılandıralım. Bunun için `nano config.toml` yazıyoruz. Ve içindekileri temizleyerek alttaki satırları ekliyoruz.
 
-```
+```yml
 baseURL = 'https://kullanıcıadı.github.io'
 languageCode = 'en-us'
 title = "Benim güzel blogum"
@@ -165,3 +165,5 @@ $ git push -u origin main -f             ## Sizden kullanıcı adı ve şifre is
 
 ## 5) Artık küçük çaplı websitemiz hazır. Eğer bir domain adresine sahipseniz bunu uygulayabilirsiniz. Sitenizde yeni bir post oluşturmak için şurada yeni dosya oluşturabilirsiniz.
 `https://github.com/kullanıcıadı/kullanıcıadı.github.io/content/posts/benimyenipostum.md`
+
+![image](https://user-images.githubusercontent.com/62564400/174793870-044a381c-6a46-48b6-ae0f-c904f4eb0646.png)
