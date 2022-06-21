@@ -1,0 +1,102 @@
+<!doctype html><html lang=en><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=color-scheme content="light dark"><meta name=author content="Taha"><meta name=description content="Github Pages üzerine Hugo Kurulumu"><meta name=keywords content="blog"><meta name=twitter:card content="summary"><meta name=twitter:title content="Github Pages üzerine Hugo Kurulumu"><meta name=twitter:description content="Github Pages üzerine Hugo Kurulumu"><meta property="og:title" content="Github Pages üzerine Hugo Kurulumu"><meta property="og:description" content="Github Pages üzerine Hugo Kurulumu"><meta property="og:type" content="article"><meta property="og:url" content="https://discover02.github.io/posts/hugosetup/"><meta property="article:section" content="posts"><meta property="article:published_time" content="2022-06-21T00:00:00+00:00"><meta property="article:modified_time" content="2022-06-21T00:00:00+00:00"><title>Discover02's Blog</title><link rel=canonical href=https://discover02.github.io/posts/hugosetup/><link rel=preload href="/fonts/forkawesome-webfont.woff2?v=1.2.0" as=font type=font/woff2 crossorigin><link rel=stylesheet href=/css/coder.min.6b1a4fbc48955b72aea7913e43fabeb45e8bc120da5aa41b598dd33adcac4b59.css integrity="sha256-axpPvEiVW3Kup5E+Q/q+tF6LwSDaWqQbWY3TOtysS1k=" crossorigin=anonymous media=screen><link rel=stylesheet href=/css/coder-dark.min.39e41a7f16bdf8cb16e43cae7d714fa1016f1d2d2898a5b3f27f42c9979204e2.css integrity="sha256-OeQafxa9+MsW5DyufXFPoQFvHS0omKWz8n9CyZeSBOI=" crossorigin=anonymous media=screen><link rel=icon type=image/png href=/images/favicon-32x32.png sizes=32x32><link rel=icon type=image/png href=/images/favicon-16x16.png sizes=16x16><link rel=apple-touch-icon href=/images/apple-touch-icon.png><link rel=apple-touch-icon sizes=180x180 href=/images/apple-touch-icon.png><link rel=manifest href=/site.webmanifest><link rel=mask-icon href=/images/safari-pinned-tab.svg color=#5bbad5><meta name=generator content="Hugo 0.101.0"></head><body class="preload-transitions colorscheme-dark"><div class=float-container><a id=dark-mode-toggle class=colorscheme-toggle><i class="fa fa-adjust fa-fw" aria-hidden=true></i></a></div><main class=wrapper><nav class=navigation><section class=container><a class=navigation-title href=/>Discover02's Blog</a>
+<input type=checkbox id=menu-toggle>
+<label class="menu-button float-right" for=menu-toggle><i class="fa fa-bars fa-fw" aria-hidden=true></i></label><ul class=navigation-list><li class=navigation-item><a class=navigation-link href=/posts/>Blog</a></li></ul></section></nav><div class=content><section class="container post"><article><header><div class=post-title><h1 class=title><a class=title-link href=https://discover02.github.io/posts/hugosetup/>Github Pages üzerine Hugo Kurulumu</a></h1></div><div class=post-meta><div class=date><span class=posted-on><i class="fa fa-calendar" aria-hidden=true></i>
+<time datetime=2022-06-21T00:00:00Z>June 21, 2022</time></span>
+<span class=reading-time><i class="fa fa-clock-o" aria-hidden=true></i>
+3-minute read</span></div><div class=tags><i class="fa fa-tag" aria-hidden=true></i>
+<span class=tag><a href=/tags/hugo/>hugo</a></span>
+<span class=separator>•</span>
+<span class=tag><a href=/tags/github-pages/>github-pages</a></span></div></div></header><div><h1 id=github-pages-üzerine-hugo-kurulumu>Github Pages üzerine Hugo Kurulumu
+<a class=heading-link href=#github-pages-%c3%bczerine-hugo-kurulumu><i class="fa fa-link" aria-hidden=true></i></a></h1><p>Herkese selam. Bugün buradaki ilk postum ile karşınızdayım. Bu postta sizlerle birlikte github&rsquo;un sağlamış olduğu github-pages üzerine hugo nasıl kurulur onu anlatacağım.
+Bildiğiniz üzere kişisel blog açmak, domain almak gibi işlemler biraz ücret istiyor. Benim gibi öğrenci olanlar veya herhangi bir para geliri olmayanlar ise genelde github&rsquo;un sağladığı ayrıcalıklardan faydalanabiliyor. Tabii github bu ayrıcalığı sağlıyor ama sadece sağlıyor. Hazır kurulu bir arayüz sağlamıyor.
+Nedir bu ayrıcalık derseniz; Github, kullanıcılarının kişisel bir domain kullanmasına imkan sağlıyor. Biraz düzenleme ile bu domain üstünde daha düzgün bir site oluşturabilirsiniz. Neyse lafı uzatmadan kuruluma geçelim.</p><br><h1 id=1-repo-kurulumu>1) Repo kurulumu
+<a class=heading-link href=#1-repo-kurulumu><i class="fa fa-link" aria-hidden=true></i></a></h1><ul><li><p>Öncelikle github hesabımızda bu ayrıcalıktan faydalanmak için bir repo açmamız gerekiyor. Bunun için <a href=https://github.com>Github</a>&lsquo;u açıyoruz, giriş yapıyoruz ve soldaki menüden Yeni seçeneğini seçiyoruz.</p></li><li><p>Ardından <code>kullanıcıadı.github.io</code> şeklinde yeni bir repo oluşturuyoruz. Dilerseniz açıklama kısmına <code>https://kullanıcıadı.github.io</code> linkini ekleyebilirsiniz</p></li></ul><p><br><br></p><h1 id=2-hugo-kurulumu>2) Hugo kurulumu
+<a class=heading-link href=#2-hugo-kurulumu><i class="fa fa-link" aria-hidden=true></i></a></h1><ul><li>Eğer bir linux makine kullanıyorsanız çoğu dağıtım repolarında hugo mevcut.<ul><li>Arch : <code>sudo pacman -S hugo</code></li><li>Debian / Ubuntu : <code>sudo apt install hugo</code></li><li>Fedora : <code>sudo dnf install hugo</code></li><li>Gentoo : <code>emerge --ask www-apps/hugo</code></li></ul></li></ul><p><br><br></p><h1 id=3-git-kurulumu>3) Git kurulumu
+<a class=heading-link href=#3-git-kurulumu><i class="fa fa-link" aria-hidden=true></i></a></h1><ul><li>Eğer bir linux makine kullanıyorsanız çoğu dağıtım repolarında hugo mevcut.</li><li>Arch : <code>sudo pacman -S git</code></li><li>Debian / Ubuntu : <code>sudo apt install git</code></li><li>Fedora : <code>sudo dnf install git</code></li><li>Gentoo : <code>emerge --ask dev-vcs/git</code></li></ul><p><br><br></p><h1 id=4-hugoyu-repo-için-kurmak>4) Hugo&rsquo;yu repo için kurmak
+<a class=heading-link href=#4-hugoyu-repo-i%c3%a7in-kurmak><i class="fa fa-link" aria-hidden=true></i></a></h1><ul><li>Gereken araçları halihazırda sağladığımıza göre gerekli dosyaları oluşturmaya başlayalım. Öncelikle oluşturduğumuz repoyu bilgisayara çekmemiz gerekiyor.</li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>$ cd ~/Documents
+</span></span><span style=display:flex><span>$ git clone https://github.com/kullanıcıadı/kullanıcıadı.github.io
+</span></span></code></pre></div><ul><li>Sonrasında hugo&rsquo;yu repo içine kuralım</li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>$ hugo new site kullanıcıadı.github.io --force
+</span></span><span style=display:flex><span>$ cd kullanıcıadı.github.io
+</span></span></code></pre></div><br><ul><li>Hugo&rsquo;yu yapılandıralım. Bunun için <code>nano config.toml</code> yazıyoruz. Ve içindekileri temizleyerek alttaki satırları ekliyoruz.</li></ul><pre tabindex=0><code>baseURL = &#39;https://kullanıcıadı.github.io&#39;
+languageCode = &#39;en-us&#39;
+title = &#34;Benim güzel blogum&#34;
+theme = &#34;hugo-coder&#34;
+
+[author]
+  name = &#34;Benim adım&#34;
+  email = &#34;deneme@ornek.com&#34;
+
+[markup.goldmark.renderer]
+  unsafe = true
+
+[params]
+  author = &#34;Benim adım&#34;
+  info = &#34;Ben bir geliştiriciyim&#34;
+  description = &#34;Burası benim mekanım&#34;
+  keywords = &#34;blog&#34;
+  colorScheme = &#34;dark&#34;
+
+[[params.social]]
+  name = &#34;Github&#34;
+  icon = &#34;fa fa-github fa-2x&#34;
+  weight = 1
+  url = &#34;https://github.com/kullanıcıadı&#34;
+[[params.social]]
+  name = &#34;RSS&#34;
+  icon = &#34;fa fa-2x fa-rss&#34;
+  weight = 6
+  url = &#34;index.xml&#34;
+  rel = &#34;alternate&#34;
+  type = &#34;application/rss+xml&#34;
+
+[[menu.main]]
+  name = &#34;Blog&#34;
+  weight = 1
+  url = &#34;posts/&#34;
+</code></pre><br><ul><li>Dosyayı kaydedip çıktıktan sonra ise <a href=https://github.com/luizdepra/hugo-coder>hugo-coder</a> adlı temayı kuruyoruz. Dilerseniz kendinize başka bir hugo teması seçebilirsiniz.</li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>$ git submodule add https://github.com/luizdepra/hugo-coder.git themes/hugo-coder
+</span></span></code></pre></div><br><ul><li>Bundan sonra ise her gönderi attığımızda siteyi yenileyecek olan o kodu oluşturuyoruz.</li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>$ mkdir .github/workflows -p
+</span></span><span style=display:flex><span>$ nano .github/workflows/gh-pages.yml          <span style=color:#75715e>#içine alttakileri yazın</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>name: github pages
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>on:
+</span></span><span style=display:flex><span>  push:
+</span></span><span style=display:flex><span>    branches:
+</span></span><span style=display:flex><span>      - main  <span style=color:#75715e># Set a branch to deploy</span>
+</span></span><span style=display:flex><span>  pull_request:
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>jobs:
+</span></span><span style=display:flex><span>  deploy:
+</span></span><span style=display:flex><span>    runs-on: ubuntu-20.04
+</span></span><span style=display:flex><span>    steps:
+</span></span><span style=display:flex><span>      - uses: actions/checkout@v2
+</span></span><span style=display:flex><span>        with:
+</span></span><span style=display:flex><span>          submodules: true  <span style=color:#75715e># Fetch Hugo themes (true OR recursive)</span>
+</span></span><span style=display:flex><span>          fetch-depth: <span style=color:#ae81ff>0</span>    <span style=color:#75715e># Fetch all history for .GitInfo and .Lastmod</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>      - name: Setup Hugo
+</span></span><span style=display:flex><span>        uses: peaceiris/actions-hugo@v2
+</span></span><span style=display:flex><span>        with:
+</span></span><span style=display:flex><span>          hugo-version: <span style=color:#e6db74>&#39;latest&#39;</span>
+</span></span><span style=display:flex><span>          <span style=color:#75715e># extended: true</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>      - name: Build
+</span></span><span style=display:flex><span>        run: hugo --minify
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>      - name: Deploy
+</span></span><span style=display:flex><span>        uses: peaceiris/actions-gh-pages@v3
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span>: github.ref <span style=color:#f92672>==</span> <span style=color:#e6db74>&#39;refs/heads/main&#39;</span>
+</span></span><span style=display:flex><span>        with:
+</span></span><span style=display:flex><span>          github_token: <span style=color:#e6db74>${</span>{ secrets.GITHUB_TOKEN <span style=color:#e6db74>}</span><span style=color:#f92672>}</span>
+</span></span><span style=display:flex><span>          publish_dir: ./public
+</span></span></code></pre></div><br><ul><li>Kaydedip çıktıktan sonra ise bu yaptığımız bütün değişiklikleri kendi repomuza aktaralım (bunun için öncelikle github&rsquo;tan access token oluşturmanız gerekiyor. <a href=https://github.com/settings/tokens>Buradan</a> yeni bir token oluşturun ve oluşturduktan sonra ghp ile başlayan tokeni bir yerde saklayın.</li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>$ hugo                                   <span style=color:#75715e># Son durumu kaydetmek için önemlidir</span>
+</span></span><span style=display:flex><span>$ git add .
+</span></span><span style=display:flex><span>$ git commit -m <span style=color:#e6db74>&#34;HugoSetup&#34;</span>
+</span></span><span style=display:flex><span>$ git push -u origin main -f             <span style=color:#75715e>## Sizden kullanıcı adı ve şifre isteyecek. Kullanıcı adınızı yazın ve </span>
+</span></span><span style=display:flex><span>                                         <span style=color:#75715e>#  şifre kısmına ghp ile başlayan tokeni girin. Dosyalar karşıya yüklenecektir.</span>
+</span></span></code></pre></div><br><ul><li>Dosyalar karşıya yüklendikten sonra 1-2 dakika bekleyin ve ardından şu ayarı uygulayın.</li></ul><p><img src=https://user-images.githubusercontent.com/62564400/174791940-e8b7dabc-a047-4bd9-84b5-8e7234a8d672.png alt=image></p><p><br><br></p><h2 id=5-artık-küçük-çaplı-websitemiz-hazır-eğer-bir-domain-adresine-sahipseniz-bunu-uygulayabilirsiniz-sitenizde-yeni-bir-post-oluşturmak-için-şurada-yeni-dosya-oluşturabilirsiniz>5) Artık küçük çaplı websitemiz hazır. Eğer bir domain adresine sahipseniz bunu uygulayabilirsiniz. Sitenizde yeni bir post oluşturmak için şurada yeni dosya oluşturabilirsiniz.
+<a class=heading-link href=#5-art%c4%b1k-k%c3%bc%c3%a7%c3%bck-%c3%a7apl%c4%b1-websitemiz-haz%c4%b1r-e%c4%9fer-bir-domain-adresine-sahipseniz-bunu-uygulayabilirsiniz-sitenizde-yeni-bir-post-olu%c5%9fturmak-i%c3%a7in-%c5%9furada-yeni-dosya-olu%c5%9fturabilirsiniz><i class="fa fa-link" aria-hidden=true></i></a></h2><p><code>https://github.com/kullanıcıadı/kullanıcıadı.github.io/content/posts/benimyenipostum.md</code></p></div><footer></footer></article></section></div><footer class=footer><section class=container>©
+2022
+Taha
+·
+Powered by <a href=https://gohugo.io/>Hugo</a> & <a href=https://github.com/luizdepra/hugo-coder/>Coder</a>.</section></footer></main><script src=/js/coder.min.236049395dc3682fb2719640872958e12f1f24067bb09c327b233e6290c7edac.js integrity="sha256-I2BJOV3DaC+ycZZAhylY4S8fJAZ7sJwyeyM+YpDH7aw="></script></body></html>
