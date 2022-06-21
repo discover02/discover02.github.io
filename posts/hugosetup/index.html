@@ -17,43 +17,43 @@ Nedir bu ayrıcalık derseniz; Github, kullanıcılarının kişisel bir domain 
 </span></span><span style=display:flex><span>$ git clone https://github.com/kullanıcıadı/kullanıcıadı.github.io
 </span></span></code></pre></div><ul><li>Sonrasında hugo&rsquo;yu repo içine kuralım</li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>$ hugo new site kullanıcıadı.github.io --force
 </span></span><span style=display:flex><span>$ cd kullanıcıadı.github.io
-</span></span></code></pre></div><br><ul><li>Hugo&rsquo;yu yapılandıralım. Bunun için <code>nano config.toml</code> yazıyoruz. Ve içindekileri temizleyerek alttaki satırları ekliyoruz.</li></ul><pre tabindex=0><code>baseURL = &#39;https://kullanıcıadı.github.io&#39;
-languageCode = &#39;en-us&#39;
-title = &#34;Benim güzel blogum&#34;
-theme = &#34;hugo-coder&#34;
-
-[author]
-  name = &#34;Benim adım&#34;
-  email = &#34;deneme@ornek.com&#34;
-
-[markup.goldmark.renderer]
-  unsafe = true
-
-[params]
-  author = &#34;Benim adım&#34;
-  info = &#34;Ben bir geliştiriciyim&#34;
-  description = &#34;Burası benim mekanım&#34;
-  keywords = &#34;blog&#34;
-  colorScheme = &#34;dark&#34;
-
-[[params.social]]
-  name = &#34;Github&#34;
-  icon = &#34;fa fa-github fa-2x&#34;
-  weight = 1
-  url = &#34;https://github.com/kullanıcıadı&#34;
-[[params.social]]
-  name = &#34;RSS&#34;
-  icon = &#34;fa fa-2x fa-rss&#34;
-  weight = 6
-  url = &#34;index.xml&#34;
-  rel = &#34;alternate&#34;
-  type = &#34;application/rss+xml&#34;
-
-[[menu.main]]
-  name = &#34;Blog&#34;
-  weight = 1
-  url = &#34;posts/&#34;
-</code></pre><br><ul><li>Dosyayı kaydedip çıktıktan sonra ise <a href=https://github.com/luizdepra/hugo-coder>hugo-coder</a> adlı temayı kuruyoruz. Dilerseniz kendinize başka bir hugo teması seçebilirsiniz.</li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>$ git submodule add https://github.com/luizdepra/hugo-coder.git themes/hugo-coder
+</span></span></code></pre></div><br><ul><li>Hugo&rsquo;yu yapılandıralım. Bunun için <code>nano config.toml</code> yazıyoruz. Ve içindekileri temizleyerek alttaki satırları ekliyoruz.</li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=display:flex><span><span style=color:#ae81ff>baseURL = &#39;https://kullanıcıadı.github.io&#39;</span>
+</span></span><span style=display:flex><span><span style=color:#ae81ff>languageCode = &#39;en-us&#39;</span>
+</span></span><span style=display:flex><span><span style=color:#ae81ff>title = &#34;Benim güzel blogum&#34;</span>
+</span></span><span style=display:flex><span><span style=color:#ae81ff>theme = &#34;hugo-coder&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>[<span style=color:#ae81ff>author]</span>
+</span></span><span style=display:flex><span>  <span style=color:#ae81ff>name = &#34;Benim adım&#34;</span>
+</span></span><span style=display:flex><span>  <span style=color:#ae81ff>email = &#34;deneme@ornek.com&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>[<span style=color:#ae81ff>markup.goldmark.renderer]</span>
+</span></span><span style=display:flex><span>  <span style=color:#ae81ff>unsafe = true</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>[<span style=color:#ae81ff>params]</span>
+</span></span><span style=display:flex><span>  <span style=color:#ae81ff>author = &#34;Benim adım&#34;</span>
+</span></span><span style=display:flex><span>  <span style=color:#ae81ff>info = &#34;Ben bir geliştiriciyim&#34;</span>
+</span></span><span style=display:flex><span>  <span style=color:#ae81ff>description = &#34;Burası benim mekanım&#34;</span>
+</span></span><span style=display:flex><span>  <span style=color:#ae81ff>keywords = &#34;blog&#34;</span>
+</span></span><span style=display:flex><span>  <span style=color:#ae81ff>colorScheme = &#34;dark&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>[[<span style=color:#ae81ff>params.social]]</span>
+</span></span><span style=display:flex><span>  <span style=color:#ae81ff>name = &#34;Github&#34;</span>
+</span></span><span style=display:flex><span>  <span style=color:#ae81ff>icon = &#34;fa fa-github fa-2x&#34;</span>
+</span></span><span style=display:flex><span>  <span style=color:#ae81ff>weight = 1</span>
+</span></span><span style=display:flex><span>  <span style=color:#ae81ff>url = &#34;https://github.com/kullanıcıadı&#34;</span>
+</span></span><span style=display:flex><span>[[<span style=color:#ae81ff>params.social]]</span>
+</span></span><span style=display:flex><span>  <span style=color:#ae81ff>name = &#34;RSS&#34;</span>
+</span></span><span style=display:flex><span>  <span style=color:#ae81ff>icon = &#34;fa fa-2x fa-rss&#34;</span>
+</span></span><span style=display:flex><span>  <span style=color:#ae81ff>weight = 6</span>
+</span></span><span style=display:flex><span>  <span style=color:#ae81ff>url = &#34;index.xml&#34;</span>
+</span></span><span style=display:flex><span>  <span style=color:#ae81ff>rel = &#34;alternate&#34;</span>
+</span></span><span style=display:flex><span>  <span style=color:#ae81ff>type = &#34;application/rss+xml&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>[[<span style=color:#ae81ff>menu.main]]</span>
+</span></span><span style=display:flex><span>  <span style=color:#ae81ff>name = &#34;Blog&#34;</span>
+</span></span><span style=display:flex><span>  <span style=color:#ae81ff>weight = 1</span>
+</span></span><span style=display:flex><span>  <span style=color:#ae81ff>url = &#34;posts/&#34;</span>
+</span></span></code></pre></div><br><ul><li>Dosyayı kaydedip çıktıktan sonra ise <a href=https://github.com/luizdepra/hugo-coder>hugo-coder</a> adlı temayı kuruyoruz. Dilerseniz kendinize başka bir hugo teması seçebilirsiniz.</li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>$ git submodule add https://github.com/luizdepra/hugo-coder.git themes/hugo-coder
 </span></span></code></pre></div><br><ul><li>Bundan sonra ise her gönderi attığımızda siteyi yenileyecek olan o kodu oluşturuyoruz.</li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>$ mkdir .github/workflows -p
 </span></span><span style=display:flex><span>$ nano .github/workflows/gh-pages.yml          <span style=color:#75715e>#içine alttakileri yazın</span>
 </span></span><span style=display:flex><span>
@@ -95,7 +95,7 @@ theme = &#34;hugo-coder&#34;
 </span></span><span style=display:flex><span>$ git push -u origin main -f             <span style=color:#75715e>## Sizden kullanıcı adı ve şifre isteyecek. Kullanıcı adınızı yazın ve </span>
 </span></span><span style=display:flex><span>                                         <span style=color:#75715e>#  şifre kısmına ghp ile başlayan tokeni girin. Dosyalar karşıya yüklenecektir.</span>
 </span></span></code></pre></div><br><ul><li>Dosyalar karşıya yüklendikten sonra 1-2 dakika bekleyin ve ardından şu ayarı uygulayın.</li></ul><p><img src=https://user-images.githubusercontent.com/62564400/174791940-e8b7dabc-a047-4bd9-84b5-8e7234a8d672.png alt=image></p><p><br><br></p><h2 id=5-artık-küçük-çaplı-websitemiz-hazır-eğer-bir-domain-adresine-sahipseniz-bunu-uygulayabilirsiniz-sitenizde-yeni-bir-post-oluşturmak-için-şurada-yeni-dosya-oluşturabilirsiniz>5) Artık küçük çaplı websitemiz hazır. Eğer bir domain adresine sahipseniz bunu uygulayabilirsiniz. Sitenizde yeni bir post oluşturmak için şurada yeni dosya oluşturabilirsiniz.
-<a class=heading-link href=#5-art%c4%b1k-k%c3%bc%c3%a7%c3%bck-%c3%a7apl%c4%b1-websitemiz-haz%c4%b1r-e%c4%9fer-bir-domain-adresine-sahipseniz-bunu-uygulayabilirsiniz-sitenizde-yeni-bir-post-olu%c5%9fturmak-i%c3%a7in-%c5%9furada-yeni-dosya-olu%c5%9fturabilirsiniz><i class="fa fa-link" aria-hidden=true></i></a></h2><p><code>https://github.com/kullanıcıadı/kullanıcıadı.github.io/content/posts/benimyenipostum.md</code></p></div><footer></footer></article></section></div><footer class=footer><section class=container>©
+<a class=heading-link href=#5-art%c4%b1k-k%c3%bc%c3%a7%c3%bck-%c3%a7apl%c4%b1-websitemiz-haz%c4%b1r-e%c4%9fer-bir-domain-adresine-sahipseniz-bunu-uygulayabilirsiniz-sitenizde-yeni-bir-post-olu%c5%9fturmak-i%c3%a7in-%c5%9furada-yeni-dosya-olu%c5%9fturabilirsiniz><i class="fa fa-link" aria-hidden=true></i></a></h2><p><code>https://github.com/kullanıcıadı/kullanıcıadı.github.io/content/posts/benimyenipostum.md</code></p><p><img src=https://user-images.githubusercontent.com/62564400/174793870-044a381c-6a46-48b6-ae0f-c904f4eb0646.png alt=image></p></div><footer></footer></article></section></div><footer class=footer><section class=container>©
 2022
 Taha
 ·
