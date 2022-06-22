@@ -1,3 +1,6 @@
 [submodule "themes/hugo-coder"]
 	path = themes/hugo-coder
 	url = https://github.com/luizdepra/hugo-coder.git
+[submodule "content/posts/sss"]
+	path = content/posts/sss
+	url = https://github.com/LuNiZz/siber-guvenlik-sss
