@@ -1,7 +1,7 @@
 baseURL = 'https://discover02.github.io'
 languageCode = 'en-us'
 title = "Discover02's Blog"
-theme = "hugo-clarity"
+theme = "hugo-coder"
 
 [author]
   name = "Taha"
