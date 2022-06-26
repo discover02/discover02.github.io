@@ -102,8 +102,8 @@ Eğer firewalld varsa
 ```bash
 $ bash
 
-$ INTERFACES="$(firewall-cmd --get-active-zones | grep -v interfaces)"
-$ for a in $INTERFACES; do
+$ ZONES="$(firewall-cmd --get-active-zones | grep -v interfaces)"
+$ for a in $ZONES; do
 >   sudo firewall-cmd --zone=$a --permanent --add-port=19132/tcp
 >   sudo firewall-cmd --zone=$a --permanent --add-port=19132/udp
 >   sudo firewall-cmd --reload
