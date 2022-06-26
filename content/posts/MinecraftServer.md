@@ -13,7 +13,7 @@ Herkese selam. Bugün yazımızda herhangi bir linux kurulu bilgisayara Minecraf
 
 Bir süredir bu konu hakkında araştırma yapıyordum. Elimde bir bilgisayar ve bir telefon var. Kardeşim veya bir arkadaşım ile yakından olsun uzaktan olsun minecraft oynamanın yolunu ararken en sonunda bunu kendi bilgisayarımda çözmeyi başardım. Bugün bu makalemizde bunu nasıl yaptığımı adım adım anlatacağım. Diyebilirsiniz Aternos, Ploudos gibi ücretsiz alternatifler varken neden kendi bilgisayarında çalıştırmak istiyorsun diye. Evet bu tarz ücretsiz alternatifler var ama kısıtlı oluyor genelde. Sonuçta kimse hayrına server vermek istemez. Ek olarak bu sunucularda bakım veya kesinti olursa oyununuz yarım kalabilir. Neyse lafı uzatmadan konuya dalalım.
 
-Not : "$ işaretleri shell'i temsilidir"
+Not : '"$" ve ">" işaretleri shell'i temsilidir. Siz komutları yazarken yazmayın'
 
 <br>
 
