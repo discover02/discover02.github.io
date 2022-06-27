@@ -46,7 +46,7 @@
 </span></span><span style=display:flex><span>$ sudo rm etc/resolv.conf
 </span></span><span style=display:flex><span>$ sudo touch etc/resolv.conf
 </span></span><span style=display:flex><span>$ <span style=color:#66d9ef>for</span> a in dev etc/resolv.conf proc sys sys/firmware/efi/efivars; <span style=color:#66d9ef>do</span>
-</span></span><span style=display:flex><span>&gt;    mount --bind /$a ./$a
+</span></span><span style=display:flex><span>&gt;   sudo mount --bind /$a ./$a
 </span></span><span style=display:flex><span>&gt; <span style=color:#66d9ef>done</span>
 </span></span><span style=display:flex><span>$ sudo chroot . /bin/bash
 </span></span></code></pre></div><br><h1 id=9-sistemimizde-dil-ve-bölge-ayarlarını-yapalım-ingilizce--en_usutf-8--türkçe--tr_trutf-8>9) Sistemimizde dil ve bölge ayarlarını yapalım. (ingilizce = en_US.UTF-8 | türkçe = tr_TR.UTF-8)
