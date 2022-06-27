@@ -56,7 +56,7 @@ $ sudo mv *.repo /etc/yum.repos.d
 $ wget https://download-ib01.fedoraproject.org/pub/fedora/linux/releases/36/Everything/x86_64/os/Packages/f/fedora-gpg-keys-36-1.noarch.rpm
 $ rpm2cpio fedora-gpg-keys-36-1.noarch.rpm | cpio -idmv
 $ sudo mv etc/pki/rpm-gpg /etc/pki/
-$ sudo dnf install fedora-gpg-keys
+$ sudo dnf --releasever=36 install fedora-gpg-keys
 ```
 
 <br>
