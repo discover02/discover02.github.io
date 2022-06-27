@@ -93,7 +93,7 @@ $ cd /mnt
 $ sudo rm etc/resolv.conf
 $ sudo touch etc/resolv.conf
 $ for a in dev etc/resolv.conf proc sys sys/firmware/efi/efivars; do
->    mount --bind /$a ./$a
+>   sudo mount --bind /$a ./$a
 > done
 $ sudo chroot . /bin/bash
 ```
