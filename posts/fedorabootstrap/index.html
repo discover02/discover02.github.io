@@ -25,7 +25,7 @@
 <a class=heading-link href=#5-gpg-anahtarlar%c4%b1n%c4%b1-i%c3%a7eri-alal%c4%b1m><i class="fa fa-link" aria-hidden=true></i></a></h1><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>$ wget https://download-ib01.fedoraproject.org/pub/fedora/linux/releases/36/Everything/x86_64/os/Packages/f/fedora-gpg-keys-36-1.noarch.rpm
 </span></span><span style=display:flex><span>$ rpm2cpio fedora-gpg-keys-36-1.noarch.rpm | cpio -idmv
 </span></span><span style=display:flex><span>$ sudo mv etc/pki/rpm-gpg /etc/pki/
-</span></span><span style=display:flex><span>$ sudo dnf install fedora-gpg-keys
+</span></span><span style=display:flex><span>$ sudo dnf --releasever<span style=color:#f92672>=</span><span style=color:#ae81ff>36</span> install fedora-gpg-keys
 </span></span></code></pre></div><br><h1 id=6-dnf-artık-kullanıma-hazır-öncelikle-bölümlerimizi-bağlayalım-root-bölümünü-btrfs-olarak-biçimlendirdiğinizi-varsayarsak>6) Dnf artık kullanıma hazır. Öncelikle bölümlerimizi bağlayalım. Root bölümünü BTRFS olarak biçimlendirdiğinizi varsayarsak
 <a class=heading-link href=#6-dnf-art%c4%b1k-kullan%c4%b1ma-haz%c4%b1r-%c3%b6ncelikle-b%c3%b6l%c3%bcmlerimizi-ba%c4%9flayal%c4%b1m-root-b%c3%b6l%c3%bcm%c3%bcn%c3%bc-btrfs-olarak-bi%c3%a7imlendirdi%c4%9finizi-varsayarsak><i class="fa fa-link" aria-hidden=true></i></a></h1><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>$ sudo mount /dev/diskadıvenumarası /mnt
 </span></span><span style=display:flex><span>$ cd /mnt
