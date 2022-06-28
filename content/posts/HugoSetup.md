@@ -22,20 +22,22 @@ Nedir bu ayrıcalık derseniz; Github, kullanıcılarının kişisel bir domain 
 <br><br>
 
 # 2) Hugo kurulumu
-- Eğer bir linux makine kullanıyorsanız çoğu dağıtım repolarında hugo mevcut. 
+- Eğer bir linux makine kullanıyorsanız çoğu dağıtım repolarında `hugo` mevcut. 
   - Arch : `sudo pacman -S hugo`
   - Debian / Ubuntu : `sudo apt install hugo`
   - Fedora : `sudo dnf install hugo`
-  - Gentoo : `emerge --ask www-apps/hugo`
+  - Gentoo : `sudo emerge --ask www-apps/hugo`
+  - OpenSUSE : `sudo zypper in hugo`
   
 <br><br>
   
 # 3) Git kurulumu
-- Eğer bir linux makine kullanıyorsanız çoğu dağıtım repolarında hugo mevcut. 
+- Eğer bir linux makine kullanıyorsanız çoğu dağıtım repolarında `git` mevcut. 
  - Arch : `sudo pacman -S git`
  - Debian / Ubuntu : `sudo apt install git`
  - Fedora : `sudo dnf install git`
- - Gentoo : `emerge --ask dev-vcs/git`
+ - Gentoo : `sudo emerge --ask dev-vcs/git`
+ - OpenSUSE : `sudo zypper in git`
 
 <br><br>
   
