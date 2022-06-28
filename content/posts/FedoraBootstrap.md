@@ -33,44 +33,44 @@ Eğer buraya kadar sorunsuz geldiyseniz bilgisayarı USB bellek üzerinden başl
 
 # 3) Temel Repoların ve GPG Keylerin İçeri Alınması
 Gerekli tüm her şeyi sağladıysanız öncelikle `dnf` kurmak ile başlayalım. Eğer Fedora Xfce isosunu açtıysanız zaten kurmanıza gerek yoktur. Eğer ArchLinux veya Debian tabanlı bir distro açtıysanız şu komutları uygulayın.
-- ArchLinux : `sudo pacman -S dnf`
-- Debian : `sudo apt install dnf`
-- Ubuntu (öncelikle universe reposunu aktifleştirmeniz gerekiyor) : `sudo apt install dnf`
+- ArchLinux : `sudo pacman -S dnf arch-install-scripts`
+- Debian : `sudo apt install dnf arch-install-scripts`
+- Ubuntu (öncelikle universe reposunu aktifleştirmeniz gerekiyor) : `sudo apt install dnf arch-install-scripts`
 
 <br>
 
 # 4) Dnf'yi kurduktan sonra temel Fedora repolarını kuralım. ("$ ve > işaretleri shell temsil eder. Siz yazmayın!!!")
 ```bash
-$ for a in fedora-cisco-openh264.repo fedora-modular.repo fedora-updates-modular.repo fedora-updates-testing-modular.repo fedora-updates-testing.repo fedora-updates.repo fedora.repo; do
+~$ for a in fedora-cisco-openh264.repo fedora-modular.repo fedora-updates-modular.repo fedora-updates-testing-modular.repo fedora-updates-testing.repo fedora-updates.repo fedora.repo; do
 >    wget https://raw.githubusercontent.com/discover02/mycstrepo/master/fedora/$a
 > done
-$
-$ sudo mkdir -p /etc/yum.repos.d
-$ sudo mv *.repo /etc/yum.repos.d
+~$
+~$ sudo mkdir -p /etc/yum.repos.d
+~$ sudo mv *.repo /etc/yum.repos.d
 ```
 
 <br>
 
 # 5) GPG anahtarlarını içeri alalım.
 ```bash
-$ wget https://download-ib01.fedoraproject.org/pub/fedora/linux/releases/36/Everything/x86_64/os/Packages/f/fedora-gpg-keys-36-1.noarch.rpm
-$ rpm2cpio fedora-gpg-keys-36-1.noarch.rpm | cpio -idmv
-$ sudo mv etc/pki/rpm-gpg /etc/pki/
-$ sudo dnf --releasever=36 install fedora-gpg-keys
+~$ wget https://download-ib01.fedoraproject.org/pub/fedora/linux/releases/36/Everything/x86_64/os/Packages/f/fedora-gpg-keys-36-1.noarch.rpm
+~$ rpm2cpio fedora-gpg-keys-36-1.noarch.rpm | cpio -idmv
+~$ sudo mv etc/pki/rpm-gpg /etc/pki/
+~$ sudo dnf --releasever=36 install fedora-gpg-keys
 ```
 
 <br>
 
 # 6) Dnf artık kullanıma hazır. Öncelikle bölümlerimizi bağlayalım. Root bölümünü BTRFS olarak biçimlendirdiğinizi varsayarsak
 ```bash
-$ sudo mount /dev/diskadıvenumarası /mnt
-$ cd /mnt
-$ sudo btrfs su cr @                           ## Root bölümü
-$ sudo btrfs su cr @home                       ## Home bölümü
-$ sudo btrfs su cr @snapshots                  ## Anlık görüntülerin kaydedileceği bölüm
+~$ sudo mount /dev/diskadıvenumarası /mnt
+~$ cd /mnt
+~$ sudo btrfs su cr @                           ## Root bölümü
+~$ sudo btrfs su cr @home                       ## Home bölümü
+~$ sudo btrfs su cr @snapshots                  ## Anlık görüntülerin kaydedileceği bölüm
                                                # (yakında snapper hakkında bir kılavuz hazırlayacağım.)
-$ cd
-$ sudo umount /mnt
+~$ cd
+~$ sudo umount /mnt
 ```
 
 <br>
@@ -78,65 +78,70 @@ $ sudo umount /mnt
 # 7) Bölümleri oluşturduktan sonra artık root bölümünü bağlayalım. Ve temel sistemi kuralım.
 - Eğer Legacy BIOS kullanıyorsanız EFI geçen komutları yazmanıza gerek yoktur.
 ```bash
-$ sudo mount -o subvol=@ /dev/diskadıvenumarası /mnt
-$ sudo mkdir -p /mnt/home 
-$ sudo mkdir -p /mnt/boot/efi && sudo mount /dev/efidiskvenumara /mnt/boot/efi
-$ sudo mount -o subvol=@home /dev/diskadıvenumarası /mnt/home
-$ sudo dnf --installroot=/mnt --releasever=36 --forcearch=x86_64 groupinstall "Core" "Minimal Install"
+~$ sudo mount -o subvol=@ /dev/diskadıvenumarası /mnt
+~$ sudo mkdir -p /mnt/home 
+~$ sudo mkdir -p /mnt/boot/efi && sudo mount /dev/efidiskvenumara /mnt/boot/efi
+~$ sudo mount -o subvol=@home /dev/diskadıvenumarası /mnt/home
+~$ sudo dnf --installroot=/mnt --releasever=36 --forcearch=x86_64 groupinstall "Core" "Minimal Install"
 ```
 
 <br>
 
-# 8) Temel sistemi kurduktan sonra chroot ile sisteme girelim.
+# 8) Sistemimizin fstab dosyasını çıkartıp kaydedelim.
 ```bash
-$ cd /mnt
-$ sudo rm etc/resolv.conf
-$ sudo touch etc/resolv.conf
-$ for a in dev etc/resolv.conf proc sys sys/firmware/efi/efivars; do
+~$ sudo genfstab -U /mnt >> /mnt/etc/fstab
+```
+
+# 9) Temel sistemi kurduktan sonra chroot ile sisteme girelim.
+```bash
+~$ cd /mnt
+~$ sudo rm etc/resolv.conf
+~$ sudo touch etc/resolv.conf
+~$ for a in dev etc/resolv.conf proc sys sys/firmware/efi/efivars; do
 >   sudo mount --bind /$a ./$a
 > done
-$ sudo chroot . /bin/bash
+~$ sudo chroot . /bin/bash
 ```
 
 <br>
 
-# 9) Sistemimizde dil ve bölge ayarlarını yapalım. (ingilizce = en_US.UTF-8 | türkçe = tr_TR.UTF-8)
+# 10) Sistemimizde dil ve bölge ayarlarını yapalım. (ingilizce = en_US.UTF-8 | türkçe = tr_TR.UTF-8)
 ```bash
-# ln -sf /usr/share/zoneinfo/Europe/Istanbul /etc/localtime
-# echo 'LANG=en_US.UTF=8' | tee /etc/locale.conf
-# echo 'KEYMAP="tr"\nFONT="eurlatgr"' | tee /etc/vconsole.conf
-# dnf --releasever=36 install langpacks-{en,tr}\* glibc-all-langpacks
+~# ln -sf /usr/share/zoneinfo/Europe/Istanbul /etc/localtime
+~# echo -e 'LANG=en_US.UTF=8' | tee /etc/locale.conf
+~# echo 'KEYMAP="tr"\nFONT="eurlatgr"' | tee /etc/vconsole.conf
+~# dnf --releasever=36 install langpacks-{en,tr}\* glibc-all-langpacks
 ```
 
 <br>
 
-# 10) Sistemimizde hostname ayarlayalım.
+# 11) Sistemimizde hostname ayarlayalım.
 ```bash
-# echo "istediğinizad" | tee /etc/hostname
+~# echo "istediğinizad" | tee /etc/hostname
 ```
 
 <br>
 
-# 11) Sistemimizde yeni bir kullanıcı oluşturalım
+# 12) Sistemimizde yeni bir kullanıcı oluşturalım
 ```bash
-# useradd -mG wheel -c Takmaisim kullanıcıadı
-# passwd kullanıcıadı
-# passwd root
-# echo "kullanıcıadı ALL = (ALL) ALL" | tee /etc/sudoers.d/10-kullanıcıadı
+~# useradd -mG wheel -c Takmaisim kullanıcıadı
+~# passwd kullanıcıadı
+~# passwd root
+~# echo "kullanıcıadı ALL = (ALL) ALL" | tee /etc/sudoers.d/10-kullanıcıadı
 ```
 
 <br>
 
-# 12) Grub önyükleyicisini ayarlayalım. (Fedora, grub'u bizim yerimize ayarlayacaktır.)
+# 13) Grub önyükleyicisini ayarlayalım. (Fedora, grub'u bizim yerimize ayarlayacaktır.)
 ```bash
-# dnf reinstall grub2-efi-* grub2-common
+~# dnf reinstall grub2-efi-* grub2-common
 ```
 
 <br>
 
-# 13) Artık istediğimiz masaüstü ortamını şu komutlar ile kurabiliriz.
+# 14) Artık istediğimiz masaüstü ortamını şu komutlar ile kurabiliriz.
 ```bash
-# dnf --releasever=36 install @base-x
+~# dnf --releasever=36 install @base-x
 ```
 - Gnome : `dnf --releasever=36 install gdm gnome-shell nautilus gnome-terminal gnome-system-monitor xdg-user-dirs-{gtk,gnome} fedora-workstation-backgrounds`
   - `sudo systemctl enable gdm`
@@ -155,5 +160,5 @@ $ sudo chroot . /bin/bash
 
 <br>
 
-# 14) Reboot atarak işlemi sonlandırıyoruz.
+# 15) Reboot atarak işlemi sonlandırıyoruz.
 Eğer bir eksik görürseniz pr atmaktan çekinmeyin. Dosyanın düzenlenebilir haline [buradan](https://github.com/discover02/discover02.github.io/blob/main/content/posts/FedoraBootstrap.md) ulaşabilirsiniz.
