@@ -4,3 +4,9 @@
 [submodule "themes/hugo-clarity"]
 	path = themes/hugo-clarity
 	url = https://github.com/chipzoller/hugo-clarity
+[submodule "themes/hugo-assembly"]
+	path = themes/hugo-assembly
+	url = https://github.com/salsysd/hugo-assembly
+[submodule "themes/hugo-html5up-alpha"]
+	path = themes/hugo-html5up-alpha
+	url = https://github.com/dewittn/hugo-html5up-alpha
