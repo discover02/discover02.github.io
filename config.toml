@@ -1,4 +1,4 @@
-baseURL = 'https://discover02.github.io'
+baseURL = 'https://mtaha.dev'
 languageCode = 'en-us'
 title = "Discover02's Blog"
 theme = "hugo-coder"
