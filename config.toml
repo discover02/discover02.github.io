@@ -5,7 +5,7 @@ theme = "hugo-coder"
 
 [author]
   name = "Taha"
-  email = "mtaha1905@yandex.com"
+  email = "discover02@mtaha.dev"
 
 [markup.goldmark.renderer]
   unsafe = true
